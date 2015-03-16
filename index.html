@@ -38,12 +38,16 @@
     
     
     <div id="myListBox">
-      <ul class="list-group" data-bind="foreach: myFilteredList">
-        <li class="list-group-item" data-bind="click: $root.clickMarker">
-          <p><h4><span class="v-name" data-bind="text: venue.name"></span></h4></p>
-          <p><span data-bind="text: venue.categories[0].name"></span></p>
-        </li>
-      </ul>
+      <div class="tittle" data-bind="click: setToggle"><h2>Click to Toggle</h2>
+        <div data-bind="visible: myBoolean">
+          <ul class="list-group" data-bind="foreach: myFilteredList">
+            <li class="list-group-item" data-bind="click: $root.clickMarker">
+              <p><h4><span class="v-name" data-bind="text: venue.name"></span></h4></p>
+              <p><span data-bind="text: venue.categories[0].name"></span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
 

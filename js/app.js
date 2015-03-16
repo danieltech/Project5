@@ -19,6 +19,7 @@ function MapViewModel() {
   var myneighMark = [];
   var locations = []; // locations in the map. can show up all, or only the filtered ones.
   var Neighborhood = "New York"; // the app starts centered in New York
+  self.myBoolean=ko.observable(true); //this boolean is used to toogle the listview on the right screen.
 
   self.topPicksList = ko.observableArray([]); // popular places in defined neighbor hood
   self.myFilteredList = ko.observableArray(self.topPicksList()); // places filtered by searching
@@ -41,6 +42,14 @@ function MapViewModel() {
     infowindow = new google.maps.InfoWindow();
   }
 
+
+  self.setToggle = function() {
+    if (self.myBoolean() == true) {
+      self.myBoolean(false);
+    }else{
+      self.myBoolean(true);
+    }
+  };
 
   
   // fitting map height to window size
